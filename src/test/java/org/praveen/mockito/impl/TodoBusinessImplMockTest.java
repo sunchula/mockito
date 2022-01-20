@@ -18,12 +18,12 @@ public class TodoBusinessImplMockTest {
 		TodoService todoServiceMock = mock(TodoService.class);
 		List<String> todos = Arrays.asList("Learn Spring MVC","Learn Spring","Learn to Dance");
 		
-		when(todoServiceMock.retrieveTodos("Dummy")).thenReturn(todos);
+		when(todoServiceMock.retrieveTodos("Spring")).thenReturn(todos);
 
 		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
-		List<String> filteredTodos = todoBusinessImpl.retrieveTodosRelatedToSpring("Dummy");
+		List<String> filteredTodos = todoBusinessImpl.retrieveTodosRelatedToSpring("Spring");
 		assertEquals(2, filteredTodos.size());
-	}
+	}  
 	
 	@Test
 	public void testRetrievedTodosRelatedToSpring_withEmptyList() {
