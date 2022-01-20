@@ -47,4 +47,13 @@ public class ListTest {
 		assertEquals("in28Minutes", listMock.get(0));
 		assertEquals("in28Minutes", listMock.get(1));
 	}
+	
+	//Exception Case
+	@Test(expected = RuntimeException.class)
+	public void arrayList_throwAnException() {
+		List listMock = mock(List.class);
+		when(listMock.get(anyInt())).thenThrow(new RuntimeException("Something"));
+		
+		listMock.get(0);
+	}
 }
